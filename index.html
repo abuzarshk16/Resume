@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abuzar Shahzad - Software Engineer Portfolio</title>
+    <!-- Load Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the theme and layout */
+        :root {
+            --primary-color: #0ea5e9; /* sky-500 */
+            --primary-light: #e0f2fe; /* sky-100 */
+            --text-color: #1e293b; /* slate-800 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light off-white background */
+        }
+        .bento-box {
+            background-color: white;
+            border-radius: 1.5rem; /* rounded-3xl */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* subtle shadow */
+            padding: 1.5rem;
+            border: 1px solid rgba(14, 165, 233, 0.15); /* Very light sky blue border */
+            height: fit-content; /* Ensure boxes adjust to content */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition for hover effects */
+        }
+        
+        /* Main Box Hover Effect: Popup/Glow */
+        .bento-box:hover {
+            transform: translateY(-5px); /* Lift effect */
+            box-shadow: 0 15px 25px -5px rgba(14, 165, 233, 0.2), 0 4px 6px -2px rgba(14, 165, 233, 0.05); /* Sky blue glow/shadow */
+        }
+
+        .bento-title {
+            color: var(--text-color);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* New Class for Inner Item Hover Effect (Slightly reduced lift/glow) */
+        .hoverable-item {
+            transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .hoverable-item:hover {
+            transform: translateY(-3px); /* Less lift than the main box */
+            box-shadow: 0 8px 15px -4px rgba(14, 165, 233, 0.15), 0 2px 4px -1px rgba(14, 165, 233, 0.05);
+        }
+
+        /* Style for the fixed back-to-top button */
+        #back-to-top {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
+</head>
+<body id="top" class="p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto space-y-6">
+
+        <!-- Header Section (Top Row) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Box 1 (Left: Profile Picture and Basic Details) -->
+            <div class="bento-box lg:col-span-1">
+                <div class="flex flex-col items-center space-y-4">
+                    <!-- Profile Image -->
+                    <div class="w-40 h-40 flex-shrink-0">
+                        <!-- 
+                            *** IMPORTANT: APNI PICTURE KA PATH YAHAAN BADLO ***
+                            Path ko ab: './profile.png' kar diya gaya hai, matlab file 'index.html' ke saath hi honi chahiye.
+                        -->
+                        <img src="profile.jpg" 
+                             alt="Abuzar Shahzad Profile Picture"
+                            class="w-full h-full object-cover rounded-xl border-4 border-sky-500 shadow-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/160x160/0ea5e9/ffffff?text=Image+Missing';">
+                    </div>
+                    
+                    <div class="text-center w-full">
+                        <h1 class="text-3xl font-extrabold text-gray-900">Abuzar Shahzad</h1>
+                        <p class="text-lg font-medium text-sky-600">Software Engineering Student</p>
+                    </div>
+
+                    <div class="w-full pt-4 border-t border-sky-100 space-y-3">
+                        <div class="flex items-center space-x-2 text-gray-700">
+                            <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            <span>19 years old</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-gray-700">
+                            <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v10c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                            <span>5th Semester, BS SE</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-gray-700">
+                            <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2z"/></svg>
+                            <span>TUF, Faisalabad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box 2 (Right: Introduction and Mindset) -->
+            <div class="bento-box lg:col-span-2">
+                <h3 class="text-2xl font-bold bento-title mb-4">Introduction & Mindset</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    I am Abuzar Shahzad, a 5th semester BS Software Engineering student at the University of Faisalabad. 
+                    I have a current **CGPA of 3.28** and recently achieved a **4th semester GPA of 3.718**, reflecting my commitment to continuous improvement.
+                    While still new to the industry, I strongly believe that the best way to learn is through **practical work and real-time project implementation**.
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-4 p-4 bg-sky-50 rounded-xl border border-sky-200 font-medium">
+                    My approach is to solve problems with **creative, outside-the-box thinking**, utilizing a blend of technical and digital skills to execute ideas effectively.
+                </p>
+            </div>
+        </div>
+
+        <!-- Middle Section (Experience, Education, Skills) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Column 1 (Design Tools/Skills Stack) -->
+            <div class="lg:col-span-1 space-y-6">
+                
+                <!-- Box 3: Technical Skills -->
+                <div class="bento-box">
+                    <h3 class="text-xl font-bold bento-title mb-4">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold shadow-sm">HTML</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold shadow-sm">CSS</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold shadow-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold shadow-sm">C++ Basics</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold shadow-sm">Python Basics</span>
+                    </div>
+                </div>
+                
+                <!-- Box 4: Digital Tools & Expertise -->
+                <div class="bento-box">
+                    <h3 class="text-xl font-bold bento-title mb-4">Digital Expertise</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold shadow-sm">Digital Marketing</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold shadow-sm">Shopify Dev</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold shadow-sm">AI Tools Integration</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold shadow-sm">Project Execution</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 (Experience & Education) -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- Box 5: Experience (Now uses hoverable-item for inner divs) -->
+                <div class="bento-box">
+                    <h3 class="text-2xl font-bold bento-title mb-4">Relevant Projects/Experience</h3>
+                    
+                    <!-- Experience 1 -->
+                    <div class="bg-gray-50 p-4 rounded-xl mb-4 hoverable-item">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Project Name / Role Placeholder</h4>
+                            <span class="text-sm font-semibold text-sky-600 bg-sky-100 px-3 py-1 rounded-full">2023 - Now</span>
+                        </div>
+                        <ul class="list-disc ml-5 text-gray-700 space-y-1">
+                            <li>Leveraged **Shopify and Digital Marketing** skills to launch and manage a test e-commerce storefront.</li>
+                            <li>Applied **HTML, CSS, and JavaScript basics** to customize and troubleshoot front-end user interfaces.</li>
+                            <li>Used **AI tools** to rapidly prototype and execute content and design concepts for efficiency.</li>
+                            <li>Focused on turning abstract concepts into functional, real-time web solutions.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="bg-gray-50 p-4 rounded-xl hoverable-item">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Academic / Technical Contributions</h4>
+                            <span class="text-sm font-semibold text-sky-600 bg-sky-100 px-3 py-1 rounded-full">2022 - Now</span>
+                        </div>
+                        <ul class="list-disc ml-5 text-gray-700 space-y-1">
+                            <li>Achieved a **3.718 GPA** in the 4th semester, demonstrating strong academic growth.</li>
+                            <li>Completed foundational coursework in Data Structures (C++) and Object-Oriented Programming.</li>
+                            <li>Proactively learned Python basics to explore machine learning and scripting applications.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Box 6: Academic Details (Now uses hoverable-item for inner divs) -->
+                <div class="bento-box">
+                    <h3 class="text-2xl font-bold bento-title mb-4">Academic Progression</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- 1. Graduation Equivalent (Current) - Highlighted -->
+                        <div class="border border-sky-200 p-3 rounded-xl bg-sky-50 hoverable-item">
+                            <div class="flex justify-between text-sm text-gray-500 font-medium">
+                                <span>2022 - Present</span>
+                                <span class="text-sky-600">5th Semester (CGPA 3.28)</span>
+                            </div>
+                            <p class="text-lg font-semibold text-gray-800">BS Software Engineering</p>
+                            <p class="text-sm text-gray-600">University of Faisalabad (TUF)</p>
+                        </div>
+                        
+                        <!-- 2. Intermediate (College) -->
+                        <div class="border border-gray-200 p-3 rounded-xl bg-white hoverable-item">
+                            <div class="flex justify-between text-sm text-gray-500 font-medium">
+                                <span>2021 - 2023</span>
+                                <span class="text-gray-600 font-bold">Score: 838/1100</span>
+                            </div>
+                            <p class="text-lg font-semibold text-gray-800">Intermediate (HSSC)</p>
+                            <p class="text-sm text-gray-600">Kips College</p>
+                        </div>
+
+                        <!-- 3. Matriculation (Schooling) -->
+                        <div class="border border-gray-200 p-3 rounded-xl bg-white hoverable-item">
+                            <div class="flex justify-between text-sm text-gray-500 font-medium">
+                                <span>2019 - 2021</span>
+                                <span class="text-gray-600 font-bold">Score: 737/1100</span>
+                            </div>
+                            <p class="text-lg font-semibold text-gray-800">Matriculation</p>
+                            <p class="text-sm text-gray-600">The Lahore Lyceum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Full Width Section -->
+        <div class="space-y-6">
+            
+            <!-- Box 7: Portfolio Links (Updated with specific, external links) -->
+            <div class="bento-box">
+                <h3 class="text-2xl font-bold bento-title mb-4">Portfolio & Digital Presence</h3>
+                <div class="flex flex-wrap gap-4 justify-start">
+                    
+                    <!-- Portfolio Button -->
+                    <a href="https://yourportfolio.com" target="_blank" class="flex items-center space-x-2 p-3 bg-sky-500 text-white rounded-xl hover:bg-sky-600 transition duration-300 shadow-lg hoverable-item">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <span class="font-medium">My Portfolio</span>
+                    </a>
+                    
+                    <!-- GitHub Button (Black/Gray Theme) -->
+                    <a href="https://github.com/YourUsername" target="_blank" class="flex items-center space-x-2 p-3 bg-gray-900 text-white rounded-xl hover:bg-gray-700 transition duration-300 shadow-lg hoverable-item">
+                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12c0 5.305 3.438 9.799 8.205 11.385.6.11.82-.26.82-.577v-1.99c-3.336.726-4.043-1.608-4.043-1.608-.546-1.383-1.332-1.755-1.332-1.755-1.087-.745.082-.729.082-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493 1.0.108-.77.42-1.305.762-1.605-2.665-.3-5.466-1.334-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.3-.535-1.52.117-3.175 0 0 1.008-.32 3.301 1.23.957-.266 1.983-.4 3.003-.404 1.02.004 2.046.138 3.003.404 2.29-1.55 3.298-1.23 3.298-1.23.653 1.655.242 2.875.118 3.175.77.84 1.234 1.91 1.234 3.22 0 4.605-2.805 5.62-5.474 5.92.43.373.815 1.107.815 2.23v3.31c0 .318.216.69.825.575C20.565 21.795 24 17.305 24 12c0-6.628-5.372-12-12-12z"/></svg>
+                        <span class="font-medium">GitHub</span>
+                    </a>
+
+                    <!-- LinkedIn Button (Blue Theme) -->
+                    <a href="https://linkedin.com/in/YourUsername" target="_blank" class="flex items-center space-x-2 p-3 bg-blue-700 text-white rounded-xl hover:bg-blue-800 transition duration-300 shadow-lg hoverable-item">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.629c0-1.375-.023-3.142-1.913-3.142-1.917 0-2.209 1.496-2.209 3.04.04 5.584 0 5.629 0 5.629h-3.554v-11.88h3.411v1.622h.043c.477-.9 1.635-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.465v6.241zM5.137 8.356c-1.011.006-1.83-1.22-1.83-2.731-.001-1.516.82-2.73 1.83-2.73.998 0 1.83 1.214 1.83 2.73 0 1.51-.832 2.73-1.83 2.73zm-.008 12.096h-3.554v-11.88h3.554v11.88z"/></svg>
+                        <span class="font-medium">LinkedIn</span>
+                    </a>
+
+                    <!-- Instagram Button (Pink/Gradient Theme) -->
+                    <a href="https://instagram.com/YourUsername" target="_blank" class="flex items-center space-x-2 p-3 bg-pink-600 text-white rounded-xl hover:bg-pink-700 transition duration-300 shadow-lg hoverable-item">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-3.176 0-3.585.013-4.85.071-1.266.059-2.146.249-2.887.533-.74.284-1.393.684-2.015 1.306-.622.622-1.022 1.275-1.306 2.015-.284.741-.474 1.621-.533 2.887-.058 1.265-.071 1.674-.071 4.85s.013 3.585.071 4.85c.059 1.266.249 2.146.533 2.887.284.74.684 1.393 1.306 2.015.622.622 1.275 1.022 2.015 1.306.741.284 1.621.474 2.887.533 1.265.058 1.674.071 4.85.071s3.585-.013 4.85-.071c1.266-.059 2.146-.249 2.887-.533.74-.284 1.393-.684 2.015-1.306.622-.622 1.022-1.275 1.306-2.015.284-.741.474-1.621.533-2.887.058-1.265.071-1.674.071-4.85s-.013-3.585-.071-4.85c-.059-1.266-.249-2.146-.533-2.887-.284-.74-.684-1.393-1.306-2.015-.622-.622-1.275-1.022-2.015-1.306-.741-.284-1.621-.474-2.887-.533-1.265-.058-1.674-.071-4.85-.071zm-4.755 1.488c2.477 0 2.76.01 3.73.053 1.144.053 1.748.257 2.144.409.52.2.898.441 1.24.783.342.342.583.72.783 1.24.152.396.356.999.409 2.144.043.97.053 1.253.053 3.73s-.01 2.76-.053 3.73c-.053 1.144-.257 1.748-.409 2.144-.2.52-.441.898-.783 1.24-.342.342-.72.583-1.24.783-.396.152-.999.356-2.144.409-.97.043-1.253.053-3.73.053s-2.76-.01-3.73-.053c-1.144-.053-1.748-.257-2.144-.409-.52-.2-.898-.441-1.24-.783-.342-.342-.583-.72-.783-1.24-.152-.396-.356-.999-.409-2.144-.043-.97-.053-1.253-.053-3.73s.01-2.76.053-3.73c.053-1.144.257-1.748.409-2.144.2-.52.441-.898.783-1.24.342-.342.72-.583 1.24-.783.396-.152.999-.356 2.144-.409.97-.043 1.253-.053 3.73-.053zm.005 2.512c-2.455 0-4.444 1.989-4.444 4.444s1.989 4.444 4.444 4.444 4.444-1.989 4.444-4.444-1.989-4.444-4.444-4.444zm.005 7.429c-1.646 0-2.985-1.339-2.985-2.985s1.339-2.985 2.985-2.985 2.985 1.339 2.985 2.985-1.339 2.985-2.985 2.985zm4.015-7.429c0-.49-.4-.89-.89-.89s-.89.4-.89.89.4.89.89.89.89-.4.89-.89z"/></svg>
+                        <span class="font-medium">Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Box 8: Contact Details -->
+            <div class="bento-box">
+                <h3 class="text-2xl font-bold bento-title mb-4">Contact Details</h3>
+                <div class="flex flex-wrap gap-x-8 gap-y-4 text-lg text-gray-700">
+                    <div class="flex items-center space-x-2">
+                         <svg class="w-6 h-6 text-sky-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M21.79 16.41c-.41-1.09-.91-1.99-1.39-2.73-.24-.36-.45-.66-.63-.9a1 1 0 00-1.42.16l-1.31 1.31c-.1.1-.2.15-.31.15-.09 0-.17-.03-.25-.09-.92-.68-2.31-1.89-3.79-3.37s-2.69-2.87-3.37-3.79c-.06-.08-.09-.16-.09-.25 0-.11.05-.21.15-.31l1.31-1.31c.22-.22.3-.53.22-.84-.25-1.07-.63-2.11-1.1-3.07-.48-1-.96-1.59-1.37-1.87-.27-.18-.55-.27-.85-.27-.3 0-.58.09-.85.27-.41.28-.9.87-1.37 1.87-.47.96-.85 2-1.1 3.07-.08.31.02.62.24.84l1.31 1.31c.21.21.28.52.2.82-.09.32-.42.66-.9 1.14-.49.49-1.02.93-1.6 1.32l-.12.08c-.6.37-1.16.69-1.68.95-.51.27-.99.5-1.42.7-.42.2-.82.36-1.18.5-.36.14-.7.24-1.02.32-.32.08-.62.11-.88.08-.26-.03-.51-.12-.75-.27-.24-.15-.47-.36-.67-.64-.2-.28-.39-.62-.57-1.02-.18-.4-.32-.86-.42-1.35-.1-.49-.16-1.04-.18-1.63-.02-.59-.01-1.17.03-1.74.04-.57.12-1.12.23-1.65.11-.53.27-1.03.49-1.5.22-.47.49-.9.81-1.28.32-.38.69-.73 1.11-1.04.42-.31.86-.59 1.32-.82.46-.23.95-.42 1.45-.58.5-.16 1.02-.28 1.55-.37.53-.09 1.05-.14 1.56-.14h.02c.32 0 .64.04.97.11.33.07.67.19 1.02.35.35.16.7.37 1.06.63.36.26.71.58 1.05.94.34.36.66.77.96 1.22.3.45.57.94.8 1.47.23.53.42 1.08.56 1.66.14.58.21 1.18.21 1.78s-.07 1.19-.21 1.77c-.14.58-.33 1.14-.56 1.67-.23.53-.5 1.02-.8 1.47-.3.45-.62.87-.96 1.23-.34.36-.69.57-1.05.63-.36.06-.69.09-1.02.09-.32 0-.64-.04-.97-.11-.33-.07-.67-.19-1.02-.35-.35-.16-.7-.37-1.06-.63-.36-.26-.71-.58-1.05-.94-.34-.36-.66-.77-.96-1.22-.3-.45-.57-.94-.8-1.47-.23-.53-.42-1.08-.56-1.66-.14-.58-.21-1.18-.21-1.78s.07-1.19.21-1.77c.14-.58.33-1.14.56-1.67.23-.53.5-1.02.8-1.47.3-.45.62-.87.96 1.23.34.36.69.57 1.05.63.36.06.69.09 1.02.09h-.02z"/></svg>
+                        <span class="font-medium">your.email@example.com</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-6 h-6 text-sky-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-5h-3c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h3V9h-2V7h2c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1z"/></svg>
+                        <span class="font-medium">+92 3XX XXXXXXX</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-6 h-6 text-sky-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1.5-6h3c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5z"/></svg>
+                        <span class="font-medium">Faisalabad, Pakistan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 p-4 bg-sky-500 text-white rounded-full shadow-lg hover:bg-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-300 opacity-0 transform translate-y-4"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        aria-label="Back to Top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script>
+        // JavaScript for the "Back to Top" button visibility
+        const backToTopButton = document.getElementById('back-to-top');
+
+        const toggleVisibility = () => {
+            if (window.scrollY > 300) {
+                // Show button with smooth transition
+                backToTopButton.classList.remove('opacity-0', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                // Hide button with smooth transition
+                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+                backToTopButton.classList.add('opacity-0', 'translate-y-4');
+            }
+        };
+
+        // Add event listeners
+        window.addEventListener('scroll', toggleVisibility);
+    </script>
+</body>
+</html>
